@@ -1,0 +1,480 @@
+/* ==========================================
+   CONFIGURACIÓN INFANTIL E INTERACTIVA
+   ========================================== */
+:root {
+  --bg-color: #e0f7fa;
+  --panel-bg: #ffffff;
+  --color-primary: #ff4081; /* Rosa chicle */
+  --color-secondary: #00e5ff; /* Turquesa brillante */
+  --color-accent: #ffea00; /* Amarillo brillante */
+  --color-green: #00e676; /* Verde divertido */
+  --text-main: #37474f;
+  --font-main: 'Comic Sans MS', 'Bubblegum Sans', 'Arial Rounded MT Bold', sans-serif, system-ui;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-color);
+  background-image: radial-gradient(#b2ebf2 15%, transparent 16%), radial-gradient(#b2ebf2 15%, transparent 16%);
+  background-size: 40px 40px;
+  background-position: 0 0, 20px 20px;
+  color: var(--text-main);
+  font-family: var(--font-main);
+  line-height: 1.6;
+  padding: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* ==========================================
+   HEADER
+   ========================================== */
+header {
+  text-align: center;
+  padding: 30px;
+  margin-bottom: 25px;
+  background: var(--panel-bg);
+  border: 4px dashed var(--color-primary);
+  border-radius: 25px;
+  box-shadow: 0 8px 0 rgba(255, 64, 129, 0.3);
+  transform: rotate(-1deg);
+  transition: transform 0.3s ease;
+}
+
+header:hover {
+  transform: rotate(1deg) scale(1.02);
+}
+
+header h1 {
+  font-size: 3rem;
+  color: var(--color-primary);
+  text-shadow: 3px 3px 0 var(--color-accent);
+  margin-bottom: 10px;
+}
+
+header p {
+  color: #00bcd4;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* ==========================================
+   NAVEGACIÓN INTERACTIVA
+   ========================================== */
+nav {
+  margin-bottom: 30px;
+  background: #fff;
+  border: 4px solid var(--color-secondary);
+  border-radius: 20px;
+  padding: 15px;
+  box-shadow: 0 6px 0 rgba(0, 229, 255, 0.3);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+nav a {
+  background-color: var(--color-secondary);
+  color: #006064;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+  padding: 10px 20px;
+  border-radius: 50px;
+  box-shadow: 0 4px 0 #00acc1;
+  transition: all 0.2s ease;
+  display: inline-block;
+}
+
+nav a:hover {
+  background-color: var(--color-accent);
+  color: #d84315;
+  transform: translateY(-4px) scale(1.1);
+  box-shadow: 0 8px 0 #fbc02d;
+}
+
+nav a:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 #fbc02d;
+}
+
+/* ==========================================
+   CONTENIDO PRINCIPAL Y ASIDE
+   ========================================== */
+main, aside {
+  background: var(--panel-bg);
+  border: 4px solid #b39ddb;
+  border-radius: 25px;
+  padding: 30px;
+  margin-bottom: 30px;
+  box-shadow: 0 8px 0 rgba(179, 157, 219, 0.4);
+}
+
+h2, h3 {
+  color: #7e57c2;
+  margin-top: 25px;
+  margin-bottom: 15px;
+}
+
+h2 {
+  font-size: 2rem;
+  border-bottom: 3px dotted #d1c4e9;
+  padding-bottom: 8px;
+}
+
+strong {
+  color: var(--color-primary);
+  background: #ffebee;
+  padding: 2px 6px;
+  border-radius: 6px;
+}
+
+em {
+  color: #00838f;
+  font-style: normal;
+  background: #e0f7fa;
+  padding: 2px 6px;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+/* ==========================================
+   LISTAS DE PERSONAJES
+   ========================================== */
+main ul:not(.notas) {
+  list-style: none;
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 0;
+}
+
+main ul:not(.notas) li {
+  background: #f3e5f5;
+  border: 2px dashed #ab47bc;
+  padding: 12px 20px;
+  margin-bottom: 10px;
+  border-radius: 15px;
+  position: relative;
+  transition: all 0.2s ease;
+  text-align: center;
+  box-shadow: 0 4px 0 rgba(171, 71, 188, 0.2);
+}
+
+main ul:not(.notas) li::before {
+  content: '⭐';
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+main ul:not(.notas) li:hover {
+  background: #e1bee7;
+  transform: scale(1.02);
+}
+
+/* ==========================================
+   LISTA "VÉASE TAMBIÉN" (NÚMEROS PASTELES REDONDOS)
+   ========================================== */
+main ol {
+  list-style: none;
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 0;
+  counter-reset: pastel-counter;
+}
+
+main ol li {
+  counter-increment: pastel-counter;
+  background: #fce4ec; /* Rosa pastel suave */
+  border: 2px solid #f8bbd0;
+  padding: 14px 20px 14px 55px;
+  margin-bottom: 12px;
+  border-radius: 20px;
+  position: relative;
+  text-align: left;
+  box-shadow: 0 4px 0 rgba(248, 187, 208, 0.5);
+  transition: all 0.2s ease;
+}
+
+/* Número 1 y 2 en círculos de colores pastel alternativos */
+main ol li::before {
+  content: counter(pastel-counter);
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #c5cae9; /* Índigo pastel suave por defecto */
+  color: #3f51b5;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 0.95rem;
+  box-shadow: 0 2px 0 #9fa8da;
+}
+
+/* Color pastel específico para el primer elemento */
+main ol li:nth-child(1)::before {
+  background: #b2dfdb; /* Turquesa pastel */
+  color: #004d40;
+  box-shadow: 0 2px 0 #80cbc4;
+}
+
+/* Color pastel específico para el segundo elemento */
+main ol li:nth-child(2)::before {
+  background: #ffe0b2; /* Naranja/Melocotón pastel */
+  color: #e65100;
+  box-shadow: 0 2px 0 #ffcc80;
+}
+
+main ol li a {
+  color: #ad1457;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.2s;
+}
+
+main ol li a:hover {
+  color: #c2185b;
+  text-decoration: underline;
+}
+
+main ol li:hover {
+  background: #f8bbd0;
+  transform: scale(1.02);
+}
+
+/* ==========================================
+   TABLA DIVERTIDA
+   ========================================== */
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 20px 0;
+  background: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  border: 3px solid #ffccbc;
+}
+
+caption {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #d84315;
+}
+
+th, td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 2px solid #fbe9e7;
+}
+
+th {
+  background: #ffab91;
+  color: #fff;
+  font-size: 1.1rem;
+}
+
+tr:hover {
+  background: #fff3e0;
+  transition: background 0.2s;
+}
+
+/* ==========================================
+   FORMULARIO SÚPER INTERACTIVO Y LLAMATIVO
+   ========================================== */
+form {
+  background: #fffde7;
+  padding: 25px;
+  border-radius: 20px;
+  border: 4px dashed #ffd54f;
+  box-shadow: 0 6px 0 rgba(255, 213, 79, 0.4);
+}
+
+.notas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.notas label {
+  background: #fff;
+  padding: 10px 14px;
+  border-radius: 15px;
+  cursor: pointer;
+  border: 3px solid #ffe082;
+  font-weight: bold;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 0 #ffe082;
+}
+
+.notas label:hover {
+  background: var(--color-accent);
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 8px 0 #fbc02d;
+}
+
+/* Efecto super interactivo cuando seleccionas una nota del formulario */
+.notas label:has(input:checked) {
+  background: var(--color-primary);
+  color: white;
+  border-color: #c2185b;
+  box-shadow: 0 4px 0 #880e4f;
+  transform: translateY(-2px) scale(1.1);
+}
+
+textarea {
+  width: 100%;
+  background: #fff;
+  border: 3px solid #80deea;
+  border-radius: 15px;
+  padding: 12px;
+  color: var(--text-main);
+  font-family: inherit;
+  font-size: 1rem;
+  resize: vertical;
+  transition: all 0.3s;
+}
+
+textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 12px rgba(255, 64, 129, 0.4);
+}
+
+button[type="submit"] {
+  background: var(--color-green);
+  color: #004d40;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 6px 0 #00b0ff;
+  margin-top: 15px;
+  display: inline-block;
+}
+
+button[type="submit"]:hover {
+  background: var(--color-secondary);
+  color: #00363a;
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 10px 0 #00838f;
+}
+
+button[type="submit"]:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 #00838f;
+}
+
+/* ==========================================
+   GALERÍA DE IMÁGENES (REDONDEADAS, AJUSTADAS E INTERACTIVAS)
+   ========================================== */
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin-top: 20px;
+  justify-items: center;
+}
+
+.galeria figure {
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 4px solid #80cbc4;
+  transition: all 0.3s ease;
+  position: relative;
+  box-shadow: 0 6px 0 rgba(128, 203, 196, 0.4);
+  width: 100%;
+  max-width: 350px;
+  text-align: center;
+}
+
+.galeria figure:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 10px 0 rgba(255, 64, 129, 0.4);
+  border-color: var(--color-primary);
+}
+
+/* Imágenes perfectamente ajustadas y redondeadas */
+.galeria img {
+  width: 90%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  border-radius: 14px;
+  border: 3px solid #b2ebf2;
+  margin: 15px auto 5px auto;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* EFECTO INTERACTIVO DE AMPLIAR AL HACER CLIC */
+.galeria img:active,
+.galeria img:focus {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(2.2);
+  max-width: 90vw;
+  max-height: 80vh;
+  height: auto;
+  z-index: 9999;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.8), 0 0 20px var(--color-primary);
+  border-color: var(--color-primary);
+  outline: none;
+}
+
+.galeria figcaption {
+  padding: 12px;
+  font-size: 0.9rem;
+  color: #00796b;
+  font-weight: bold;
+}
+
+.etiqueta {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: var(--color-accent);
+  color: #e65100;
+  padding: 5px 12px;
+  font-size: 0.85rem;
+  border-radius: 20px;
+  font-weight: bold;
+  box-shadow: 0 3px 0 #f57f17;
+  transform: rotate(5deg);
+  z-index: 5;
+}
+
+/* ==========================================
+   FOOTER
+   ========================================== */
+footer {
+  text-align: center;
+  padding: 20px;
+  color: #00796b;
+  font-weight: bold;
+  font-size: 1rem;
+}
